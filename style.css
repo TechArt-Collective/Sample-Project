@@ -1,26 +1,34 @@
+/* Reset default margin and padding */
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 .main {
     width: 100%;
-    background-image: url("img11.jpg");
-    /* background: linear-gradient(to rgba(0,0,0,0.5)50%,rgba(0,0,0,0.5)50%), url("img1.jpg"); */
+    background-image: url("img12.jpg");
     background-position: center;
     background-size: cover;
     height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
+/* Navbar styles */
 .navbar {
     width: 1200px;
     height: 75px;
     margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .icon {
     width: 200px;
-    float: left;
     height: 70px;
 }
 
@@ -29,31 +37,22 @@
     font-size: 35px;
     font-family: Arial, Helvetica, sans-serif;
     padding-left: 20px;
-    float: left;
-    padding-top: 10px;
 }
 
-.menu {
-    width: 400px;
-    float: left;
-    height: 70px;
-}
-
-ul {
-    float: left;
+/* Menu styles */
+.menu ul {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-ul li {
+.menu ul li {
     list-style: none;
     margin-left: 62px;
-    margin-top: 27px;
     font-size: 14px;
 }
 
-ul li a {
+.menu ul li a {
     text-decoration: none;
     color: #fff;
     font-family: Arial;
@@ -61,14 +60,14 @@ ul li a {
     transition: 0.4s ease-in-out;
 }
 
-ul li a:hover {
+.menu ul li a:hover {
     color: #ff7200;
 }
 
+/* Search bar */
 .search {
-    width: 330px;
-    float: left;
-    margin-left: 270px;
+    display: flex;
+    align-items: center;
 }
 
 .srch {
@@ -77,14 +76,10 @@ ul li a:hover {
     height: 40px;
     background: transparent;
     border: 1px solid #ff7200;
-    margin-top: 13px;
     color: white;
-    border-right: none;
     font-size: 16px;
-    float: left;
     padding: 10px;
-    border-bottom-left-radius: 5px;
-    border-top-left-radius: 5px;
+    border-radius: 5px 0 0 5px;
 }
 
 .btn {
@@ -92,76 +87,95 @@ ul li a:hover {
     height: 40px;
     background: #ff7200;
     border: 2px solid #ff7200;
-    margin-top: 13px;
     color: white;
     font-size: 15px;
-    border-bottom-right-radius: 5px;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
     transition: 0.3s ease-in-out;
 }
 
-.btn:focus {
-    outline: none;
+.btn:hover {
+    background: white;
+    color: #ff7200;
 }
 
 .srch:focus {
     outline: none;
 }
 
+/* Centered login form */
 .form {
     border: 2px solid white;
-    width: 200px;
-    height: 330px;
-    background-color: transparent;
+    width: 250px;
+    height: 350px;
+    background-color: rgba(0, 0, 0, 0.6);
     backdrop-filter: blur(5px);
     color: #ff7200;
-    padding-left: 30px;
+    padding: 20px;
     position: absolute;
-    top: 230px;
-    left: 50px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    border-radius: 10px;
 }
 
-.form h2 {
-    font-family: Arial;
-    line-height: 2;
-}
-.form a {
+/* Form inputs */
+.form input {
+    width: 90%;
+    padding: 8px;
+    margin: 10px 0;
+    background: transparent;
     color: white;
-    transition: 0.4s ease-in-out;
-}
-.form a:hover {
-    color: skyblue;
-    font-size: 22px;
-}
-.form ul {
-    display: flex;
-    flex-direction: row;
-}
-
-.form ul li {
-    margin-left: 20px ;
-    
-    border-radius: 20px;
-    width: 30px;
-    height: 30px;
-}
-
-.form ul li img {
-    margin: 3px;
-    transition: 0.6s ease;
-}
-.form ul li img:hover {
-    background-color: #ff7200;
-    border-radius: 20px;
-    height: 35px;
-    width: 35px;
-}
-.c:hover {
-    width: 105px;
-    height: 45px;
+    border: 1px solid white;
+    border-radius: 5px;
+    text-align: center;
 }
 
 ::placeholder {
-    color: #0e0101;
-    font-size: 12PX;
-    text-indent: 5PX;
+    color: white;
+    font-size: 12px;
+}
+
+/* Login button */
+.form .btn {
+    width: 100%;
+    padding: 10px;
+    background: #ff7200;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.form .btn:hover {
+    background: white;
+    color: #ff7200;
+}
+
+/* Social icons */
+.form ul {
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    margin-top: 10px;
+}
+
+.form ul li {
+    list-style: none;
+    margin: 0 10px;
+}
+
+.form ul li img {
+    width: 30px;
+    transition: 0.3s;
+}
+
+.form ul li img:hover {
+    transform: scale(1.1);
+}
+
+/* Hover effect for login button */
+.c:hover {
+    width: 105px;
+    height: 45px;
 }
